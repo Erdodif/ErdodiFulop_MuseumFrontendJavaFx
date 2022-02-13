@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="120.0" prefWidth="450.0" vgap="5" xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="hu.petrik.museumfrontendjavafx.statue.AddController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="396.0" minWidth="100.0" prefWidth="239.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="4.0" prefWidth="69.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" prefWidth="60.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </padding>
+    <Label text="Múzya" GridPane.columnIndex="0"/>
+    <Label text="Magasság" GridPane.columnIndex="1"/>
+    <Label text="Ár" GridPane.columnIndex="2"/>
+    <TextField fx:id="personTextField" promptText="Cím" GridPane.rowIndex="1"/>
+    <Spinner fx:id="heightSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <valueFactory>
+            <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="10" initialValue="1000"
+                                                                                 max="3000" min="10"/>
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="priceSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <valueFactory>
+            <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1000"
+                                                                                 initialValue="300000" max="10000000"
+                                                                                 min="10000"/>
+        </valueFactory>
+    </Spinner>
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="2" text="Hozzáadás" onAction="#onHozzadasButtonClick"/>
+</GridPane>
